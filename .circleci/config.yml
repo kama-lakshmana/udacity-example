@@ -18,6 +18,15 @@ jobs:
     steps:
       - run:
           command: "echo World"
+  
+  print-variable:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: "echo an env var that is part of our project"
+          command: |
+            echo $MY_ENV_VAR
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
